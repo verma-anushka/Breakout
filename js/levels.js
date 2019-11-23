@@ -1,4 +1,5 @@
 var colors = {
+    a: '#62C4E7', // light blue
     w: "#FCFCFC", // white
     o: "#FC7460", // orange
     l: "#3CBCFC", // light blue
@@ -8,13 +9,15 @@ var colors = {
     p: "#FC74B4", // pink
     y: "#FC9838", // yellow
     s: "#BCBCBC", // silver
-    d: "#F0BC3C"  // gold
+    d: "#F0BC3C", // gold
+    c: "#7F9DDE", // purple
+    h: "#00572C", // dark green
+    z: '#7B797E'  // dark gray
 };
 
 var levels = {
 
     1 : [
-        "          ",
         "oooooooooo",
         "pppppppppp",
         "bbbbbbbbbb",
@@ -24,7 +27,62 @@ var levels = {
         "bbbbbbbbbb",
         "pppppppppp",
         "oooooooooo"
-    ]
+    ],
+
+    2: [
+        "         o",
+        "        ol",
+        "       olg",
+        "      olgb",
+        "     olgbr",
+        "    olgbro",
+        "   olgbrol",
+        "  olgbrolg",
+        " olgbrolgb",
+        "olgbrolgbr",
+      ],
+
+    3: [
+        "    bb    ",
+        "    cc    ",
+        "   bwwb  b",
+        "    ww  b ",
+        "    cc b  ",
+        " bccbbccb ",
+        "bwcwbbwcwb",
+        " bccssccb ",
+        "  bb  bb  ",
+        "   b  b   ",
+  
+      ],
+    4: [
+        "    rr    ",
+        "  ccggcc  ",
+        " lppppppl ",
+        "bbwwwwwwbb",
+        "bbwwwwwwbb",
+        "yy  yy  yy",
+        "    ss    ",
+        "    zz    ",
+        "  oo  oo  ",
+        "    rr    "
+      ],
+
+    5 : [
+        "    dd    ",
+        "rrrrrrrrrr",
+        "r        r",
+        "b ww  ww b",
+        "g        g",
+        "d   aa   d",
+        "g p    p g",
+        "b  pppp  b",
+        "r        r",
+        "rrrrrrrrrr"
+    ],
+
+
 
 }
-console.log(levels[1].length);
+// console.log(levels[1].length);
+// console.log(levels[1][0].length);

@@ -26,6 +26,7 @@ var brickHeight = 20;
 var brickPadding = 1.5;
 var brickLeftOffset = 80;
 var brickTopOffset = 80;
+var totalBricks = 0;
 var brickPattern = [];
 
 // Player 

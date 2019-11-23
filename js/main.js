@@ -1,13 +1,12 @@
-
+// GAME LOGIC
 
 function drawBricks() {
 
-    var totalBricks = 0;
+    for(var i = 0; i < levels[2].length; i++){
+        for(var j = 0; j < levels[2][i].length; j++){
 
-    for(var i = 0; i < levels[1].length; i++){
-        for(var j = 0; j < levels[1].length; j++){
-
-            if(levels[1][i][j] != ' ' && brickPattern[i][j].status == "1"){
+            // console.log("i" + i + "j" + j + "in");
+            if(levels[2][i][j] >= 'a' && levels[2][i][j] <= 'z' && brickPattern[i][j].status == "1"){
                 // Brick Position
                 var brickPositionX = (j*(brickWidth + brickPadding)) + brickLeftOffset;
                 var brickPositionY = (i*(brickHeight + brickPadding)) + brickTopOffset;
@@ -19,16 +18,16 @@ function drawBricks() {
                 // Draw on canvas
                 ctx.beginPath();
                 ctx.rect(brickPositionX, brickPositionY, brickWidth, brickHeight);
-                ctx.fillStyle = colors[levels[1][i][j]];
+                ctx.fillStyle = colors[levels[2][i][j]];
                 ctx.fill();
                 ctx.closePath();
 
                 totalBricks++;
+            }else if(levels[2][i][j] == ' '){
+                continue;
             }
         }
     }
-
-    console.log(totalBricks);
 }
 
 function drawPaddle() {
@@ -54,7 +53,7 @@ function drawBall() {
 function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#FFF";
-    ctx.fillText("Score: " + score, 0, 20)
+    ctx.fillText("Score: " + score, 10, 30)
 }
 
 function drawLives() {
@@ -74,7 +73,7 @@ function collision() {
                     b.status = 0;
                     score++;
 
-                    if (score == brickColumns * brickRows) {
+                    if (score == totalBricks) {
                         gameOver();
                     }
                 }
@@ -86,6 +85,7 @@ function collision() {
 function gameOver() {
 
     isPlaying = false;
+
     console.log("lost");
     return;
 }
@@ -95,6 +95,7 @@ function draw() {
     if (!isPlaying) {
         return;
     }
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     drawBricks();
@@ -119,6 +120,8 @@ function draw() {
         } else { // if no collision
             lives--;
             if (!lives) {
+                draw();
+                canvas.style.opacity = "0.5";
                 gameOver();
             }
             else { // reassign ball coordinates
@@ -175,6 +178,7 @@ function mouseMove(e) {
     }
 }
 
+// draw();
 document.getElementById("startGame").addEventListener("click", function () {
 
     // setTimeout(function(){ draw(); }, 3000);
