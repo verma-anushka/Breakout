@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Breakout: Arcade Game</title>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="env_container">
+            <div class="stars"></div>
+            <div class="twinkling"></div>
+
+        </div>
+        <div id="levels-container">
+        </div>
+        <div class="start-game-container">
+            <div class="start">
+                <button id="startGame">start</button>
+            </div>
+        </div>
+        <div>
+            <div id="game">
+                <canvas width="1100" height="600" id="canvas"></canvas>
+            </div>
+        </div> 
+    </div>
+
+    <script src="./js/init.js"></script>
+    <script src="./js/levels.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
