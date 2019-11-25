@@ -34,6 +34,15 @@ var score = 0;
 var lives = 3;
 var isPlaying = true;
 
+// Levels
+var totalLevels = 7;
+var chosenLevel = 1;
+var allLevels = [  document.getElementById("level-1"), document.getElementById("level-2"), 
+                document.getElementById("level-3"), document.getElementById("level-4"),
+                document.getElementById("level-5"), document.getElementById("level-6"),
+                document.getElementById("level-7")];
+
+
 function initBricks() {
 
     for (var i = 0; i < brickRows; i++) {
@@ -50,3 +59,101 @@ function initBricks() {
 }
 
 initBricks();
+
+allLevels[0].addEventListener("click", function () {
+    allLevels = [  document.getElementById("level-1"), document.getElementById("level-2"), 
+                document.getElementById("level-3"), document.getElementById("level-4"),
+                document.getElementById("level-5"), document.getElementById("level-6"),
+                document.getElementById("level-7")];
+    allLevels[0].classList.add("disable-css-transitions");
+    for(var i=0; i<totalLevels; i++){
+        if(i!=0){
+            allLevels[i].classList.remove("disable-css-transitions");
+        }
+    }
+    chosenLevel = 1;
+});
+
+allLevels[1].addEventListener("click", function () {
+    allLevels = [  document.getElementById("level-1"), document.getElementById("level-2"), 
+                document.getElementById("level-3"), document.getElementById("level-4"),
+                document.getElementById("level-5"), document.getElementById("level-6"),
+                document.getElementById("level-7")];
+    allLevels[1].classList.add("disable-css-transitions");
+    for(var i=0; i<totalLevels; i++){
+        if(i!=1){
+            allLevels[i].classList.remove("disable-css-transitions");
+        }
+    }
+    chosenLevel = 2;
+});
+
+allLevels[2].addEventListener("click", function () {
+    allLevels = [  document.getElementById("level-1"), document.getElementById("level-2"), 
+                document.getElementById("level-3"), document.getElementById("level-4"),
+                document.getElementById("level-5"), document.getElementById("level-6"),
+                document.getElementById("level-7")];
+    allLevels[2].classList.add("disable-css-transitions");
+    for(var i=0; i<totalLevels; i++){
+        if(i!=2){
+            allLevels[i].classList.remove("disable-css-transitions");
+        }
+    }
+    chosenLevel = 3;
+});
+
+allLevels[3].addEventListener("click", function () {
+    allLevels = [  document.getElementById("level-1"), document.getElementById("level-2"), 
+                document.getElementById("level-3"), document.getElementById("level-4"),
+                document.getElementById("level-5"), document.getElementById("level-6"),
+                document.getElementById("level-7")];
+    allLevels[3].classList.add("disable-css-transitions");
+    for(var i=0; i<totalLevels; i++){
+        if(i!=3){
+            allLevels[i].classList.remove("disable-css-transitions");
+        }
+    }
+    chosenLevel = 4;
+});
+
+allLevels[4].addEventListener("click", function () {
+    allLevels = [  document.getElementById("level-1"), document.getElementById("level-2"), 
+                document.getElementById("level-3"), document.getElementById("level-4"),
+                document.getElementById("level-5"), document.getElementById("level-6"),
+                document.getElementById("level-7")];
+    allLevels[4].classList.add("disable-css-transitions");
+    for(var i=0; i<totalLevels; i++){
+        if(i!=4){
+            allLevels[i].classList.remove("disable-css-transitions");
+        }
+    }
+    chosenLevel = 5;
+});
+
+allLevels[5].addEventListener("click", function () {
+    allLevels = [  document.getElementById("level-1"), document.getElementById("level-2"), 
+                document.getElementById("level-3"), document.getElementById("level-4"),
+                document.getElementById("level-5"), document.getElementById("level-6"),
+                document.getElementById("level-7")];
+    allLevels[5].classList.add("disable-css-transitions");
+    for(var i=0; i<totalLevels; i++){
+        if(i!=5){
+            allLevels[i].classList.remove("disable-css-transitions");
+        }
+    }
+    chosenLevel = 6;
+});
+
+allLevels[6].addEventListener("click", function () {
+    allLevels = [  document.getElementById("level-1"), document.getElementById("level-2"), 
+                document.getElementById("level-3"), document.getElementById("level-4"),
+                document.getElementById("level-5"), document.getElementById("level-6"),
+                document.getElementById("level-7")];
+    allLevels[6].classList.add("disable-css-transitions");
+    for(var i=0; i<totalLevels; i++){
+        if(i!=6){
+            allLevels[i].classList.remove("disable-css-transitions");
+        }
+    }
+    chosenLevel = 7;
+});

@@ -17,15 +17,16 @@
         <div id="env_container">
             <div class="stars"></div>
             <div class="twinkling"></div>
-
         </div>
         <div id="levels-container">
             <div id="levels"> 
-                <div class="level-1 levels"><span>1</span></div>
-                <div class="level-2 levels"><span>2</span></div>
-                <div class="level-3 levels"><span>3</span></div>
-                <div class="level-4 levels"><span>4</span></div>
-                <div class="level-5 levels"><span>5</span></div>
+                <div class="level-1 levels" id="level-1"><span class="no-select">1</span></div>
+                <div class="level-2 levels" id="level-2"><span class="no-select">2</span></div>
+                <div class="level-3 levels" id="level-3"><span class="no-select">3</span></div>
+                <div class="level-4 levels" id="level-4"><span class="no-select">4</span></div>
+                <div class="level-5 levels" id="level-5"><span class="no-select">5</span></div>
+                <div class="level-6 levels" id="level-6"><span class="no-select">6</span></div>
+                <div class="level-7 levels" id="level-7"><span class="no-select">7</span></div>
             </div>
         </div>
         <div class="start-game-container">
@@ -33,11 +34,12 @@
                 <button id="startGame">start</button>
             </div>
         </div>
-        <div>
+        <div class="game-container">
             <div id="game">
                 <canvas width="1100" height="600" id="canvas"></canvas>
             </div>
-        </div> 
+        </div>
+        
     </div>
 
     <script src="./js/init.js"></script>

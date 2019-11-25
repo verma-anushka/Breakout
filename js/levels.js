@@ -41,8 +41,32 @@ var levels = {
         " olgbrolgb",
         "olgbrolgbr",
       ],
-
     3: [
+        "rrr cc rrr",
+        "pp zzzz pp",
+        "l dddddd l",
+        " wwwwwwww ",
+        "hhhhhhhhhh",
+        " wwwwwwww ",
+        "l dddddd l",
+        "pp zzzz pp",
+        "rrr cc rrr"
+      ],
+
+    4: [
+        "rrdwwwwdrr",
+        " rrdwwdrr ",
+        "  rrwwrr  ",
+        "   rwwr   ",
+        "    dr    ",
+        "    rd    ",
+        "   rwwr   ",
+        "  rrwwrr  ",
+        " rrdwwdrr ",
+        "rrdwwwwdrr",
+      ],
+
+    5: [
         "    bb    ",
         "    cc    ",
         "   bwwb  b",
@@ -55,7 +79,7 @@ var levels = {
         "   b  b   ",
   
       ],
-    4: [
+    6: [
         "    rr    ",
         "  ccggcc  ",
         " lppppppl ",
@@ -68,7 +92,7 @@ var levels = {
         "    rr    "
       ],
 
-    5 : [
+    7: [
         "    dd    ",
         "rrrrrrrrrr",
         "r        r",
@@ -79,10 +103,6 @@ var levels = {
         "b  pppp  b",
         "r        r",
         "rrrrrrrrrr"
-    ],
-
-
+    ]
 
 }
-// console.log(levels[1].length);
-// console.log(levels[1][0].length);

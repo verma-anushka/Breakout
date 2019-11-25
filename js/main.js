@@ -2,11 +2,11 @@
 
 function drawBricks() {
 
-    for(var i = 0; i < levels[2].length; i++){
-        for(var j = 0; j < levels[2][i].length; j++){
+    totalBricks = 0;
+    for(var i = 0; i < levels[chosenLevel].length; i++){
+        for(var j = 0; j < levels[chosenLevel][i].length; j++){
 
-            // console.log("i" + i + "j" + j + "in");
-            if(levels[2][i][j] >= 'a' && levels[2][i][j] <= 'z' && brickPattern[i][j].status == "1"){
+            if(levels[chosenLevel][i][j] >= 'a' && levels[chosenLevel][i][j] <= 'z' && brickPattern[i][j].status == "1"){
                 // Brick Position
                 var brickPositionX = (j*(brickWidth + brickPadding)) + brickLeftOffset;
                 var brickPositionY = (i*(brickHeight + brickPadding)) + brickTopOffset;
@@ -18,12 +18,12 @@ function drawBricks() {
                 // Draw on canvas
                 ctx.beginPath();
                 ctx.rect(brickPositionX, brickPositionY, brickWidth, brickHeight);
-                ctx.fillStyle = colors[levels[2][i][j]];
+                ctx.fillStyle = colors[levels[chosenLevel][i][j]];
                 ctx.fill();
                 ctx.closePath();
 
                 totalBricks++;
-            }else if(levels[2][i][j] == ' '){
+            }else if(levels[chosenLevel][i][j] == ' '){
                 continue;
             }
         }
@@ -50,6 +50,7 @@ function drawBall() {
     ctx.closePath();
 
 }
+
 function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#FFF";
@@ -68,24 +69,41 @@ function collision() {
             var b = brickPattern[i][j];
 
             if (b.status == 1) {
-                if (ballPositionX > b.x && ballPositionX < (b.x + brickWidth) && ballPositionY > b.y && ballPositionY < (b.y + brickHeight)) {
+                if( ballPositionX >= b.x && ballPositionX <= (b.x + brickWidth) 
+                    && ballPositionY >= b.y && ballPositionY <= (b.y + brickHeight) 
+                    && b.x != 0 && b.y != 0
+                ) {
                     dy = -dy;
                     b.status = 0;
                     score++;
-
-                    if (score == totalBricks) {
-                        gameOver();
+                    // console.log(ballPositionX);
+                    // console.log(ballPositionY);
+                    // console.log(b.x);
+                    // console.log(b.y);
+                    // console.log(b.x + brickWidth);
+                    // console.log(b.y + brickHeight);
+                    if (totalBricks == 1) {
+                        draw();
+                        gameWon();
                     }
                 }
             }
         }
     }
 }
+function gameWon() {
+
+    isPlaying = false;
+    canvas.style.opacity = 0.5;
+    console.log("won!");
+    return;
+
+}
 
 function gameOver() {
 
     isPlaying = false;
-
+    canvas.style.opacity = 0.5;
     console.log("lost");
     return;
 }
@@ -150,6 +168,7 @@ function draw() {
 
 }
 
+
 // Event Listeners
 document.addEventListener("keydown", keyDown, false); // (any) key pressed down
 document.addEventListener("keyup", keyUp, false); // no key pressed
@@ -183,6 +202,7 @@ document.getElementById("startGame").addEventListener("click", function () {
 
     // setTimeout(function(){ draw(); }, 3000);
     document.getElementsByClassName("start-game-container")[0].style.display = "none";
+    document.getElementById("levels-container").style.display = "none";
     draw();
 
 });
