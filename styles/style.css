@@ -1,3 +1,4 @@
+/* BACKGROUND */
 .stars,
 .twinkling {
     position: absolute;
@@ -27,6 +28,7 @@
     }
 }
 
+/* LEVELS AND START GAME */
 #levels-container {
     z-index: 4;
     position: fixed;
@@ -119,9 +121,6 @@
     font-size: 66px;
     color: #000;
 }
-.no-select {
-  user-select: none; 
-}
 #startGame,
 #playAgainBtn {
     transform: rotate(35deg);
@@ -205,10 +204,8 @@
         opacity: 1;
     }
 }
-.disable-css-transitions {
-    transform: scale(0.8) !important;
-    animation-play-state: paused !important;
-}
+
+/* GAME AREA */
 #game {
     position: absolute;
     z-index: 2;
@@ -221,12 +218,8 @@ canvas {
     border-right: 0.1px solid rgba(255, 255, 255, 0.35);
     border-left: 0.1px solid rgba(255, 255, 255, 0.25);
 }
-button {
-    background: #fff;
-}
-.no-show{
-    display: none;
-}
+
+/* GAME OVER MSGS */
 .game-end-container{
     font-size: 68px;
     text-transform: uppercase;
@@ -248,4 +241,14 @@ button {
     position: absolute;
     left: 27%;
     top: 18%;
+}
+.disable-css-transitions {
+    transform: scale(0.8) !important;
+    animation-play-state: paused !important;
+}
+.no-show{
+    display: none;
+}
+.no-select {
+    user-select: none; 
 }

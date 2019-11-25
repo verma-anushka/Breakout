@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
     <title>Breakout: Arcade Game</title>
+
+    <!-- STYLESHEET -->
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     
 </head>
@@ -15,10 +17,14 @@
 <body>
 
     <div id="container">
+
+        <!-- BACKGROUND -->
         <div id="env_container">
             <div class="stars"></div>
             <div class="twinkling"></div>
         </div>
+
+        <!-- LEVELS -->
         <div id="levels-container">
             <div id="levels"> 
                 <div class="level-1 levels" id="level-1"><span class="no-select">1</span></div>
@@ -30,16 +36,22 @@
                 <div class="level-7 levels" id="level-7"><span class="no-select">7</span></div>
             </div>
         </div>
+
+        <!-- START GAME -->
         <div id="start-game-container">
             <div id="start">
                 <button id="startGame">Start</button>
             </div>
         </div>
+
+        <!-- GAME AREA -->
         <div class="game-container">
             <div id="game">
                 <canvas width="1100" height="600" id="canvas"></canvas>
             </div>
         </div>
+
+        <!-- GAME OVER MSGS -->
         <div class="game-end-container">
             <div id="won" class="no-show">
                 <p>Congratulations!</p>
@@ -52,8 +64,10 @@
                 <button id="playAgainBtn"><i class="fas fa-redo-alt"></i></button>
             </div>
         </div>
+
     </div>
 
+    <!-- JAVASCRIPT FILES -->
     <script src="./js/init.js"></script>
     <script src="./js/levels.js"></script>
     <script src="./js/main.js"></script>

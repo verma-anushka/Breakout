@@ -1,3 +1,5 @@
+// ALL LEVELS
+
 var colors = {
     a: '#62C4E7', // light blue
     w: "#FCFCFC", // white
