@@ -58,7 +58,7 @@ function initBricks() {
     }
 }
 
-initBricks();
+// initBricks();
 
 allLevels[0].addEventListener("click", function () {
     allLevels = [  document.getElementById("level-1"), document.getElementById("level-2"), 

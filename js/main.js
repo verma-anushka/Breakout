@@ -31,8 +31,6 @@ function drawBricks() {
 }
 
 function drawPaddle() {
-
-    // Draw on canvas
     ctx.beginPath();
     ctx.rect(paddlePositionX, canvas.height - paddleHeight - 20, paddleWidth, paddleHeight);
     ctx.fillStyle = "#CCC";
@@ -41,14 +39,11 @@ function drawPaddle() {
 }
 
 function drawBall() {
-
-    // Draw on canvas
     ctx.beginPath();
     ctx.arc(ballPositionX, ballPositionY, ballRadius, 0, Math.PI * 2);
     ctx.fillStyle = "#FFF";
     ctx.fill();
     ctx.closePath();
-
 }
 
 function drawScore() {
@@ -97,9 +92,8 @@ function gameWon() {
     canvas.style.opacity = 0.5;
     document.getElementById("lost").classList.add("no-show");
     document.getElementById("won").classList.remove("no-show");
+    document.getElementById("playAgain").classList.remove("no-show");
     console.log("won!");
-    return;
-
 }
 
 function gameOver() {
@@ -108,9 +102,14 @@ function gameOver() {
     canvas.style.opacity = 0.5;
     document.getElementById("won").classList.add("no-show");
     document.getElementById("lost").classList.remove("no-show");
+    document.getElementById("playAgain").classList.remove("no-show");
     console.log("lost");
-    return;
+
+    // return;
 }
+document.getElementById("playAgain").addEventListener("click", function () {
+    document.location.reload();
+});
 
 function draw() {
 
@@ -209,13 +208,27 @@ function mouseMove(e) {
         paddlePositionX = relativePositionX - paddleWidth / 2;
     }
 }
+function startGame() {
+    
+    initBricks();
 
-// draw();
-document.getElementById("start-game-container").addEventListener("click", function () {
+    document.getElementById("won").classList.add("no-show");
+    document.getElementById("lost").classList.add("no-show");
+    document.getElementById("playAgain").classList.add("no-show");
+    document.getElementById("start-game-container").style.display = "block";
+    document.getElementById("levels-container").style.display = "block";
+    canvas.style.display = "none";
 
-    // setTimeout(function(){ draw(); }, 3000);
-    document.getElementById("start-game-container").style.display = "none";
-    document.getElementById("levels-container").style.display = "none";
-    draw();
+    document.getElementById("start-game-container").addEventListener("click", function () {
 
-});
+        isPlaying = true;
+        canvas.style.opacity = 1;
+        document.getElementById("start-game-container").style.display = "none";
+        document.getElementById("levels-container").style.display = "none";
+        canvas.style.display = "block";
+
+        draw();
+
+    });
+}
+startGame();
