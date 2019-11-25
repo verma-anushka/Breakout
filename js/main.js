@@ -95,6 +95,8 @@ function gameWon() {
 
     isPlaying = false;
     canvas.style.opacity = 0.5;
+    document.getElementById("lost").classList.add("no-show");
+    document.getElementById("won").classList.remove("no-show");
     console.log("won!");
     return;
 
@@ -104,6 +106,8 @@ function gameOver() {
 
     isPlaying = false;
     canvas.style.opacity = 0.5;
+    document.getElementById("won").classList.add("no-show");
+    document.getElementById("lost").classList.remove("no-show");
     console.log("lost");
     return;
 }
@@ -125,15 +129,24 @@ function draw() {
 
     if (ballPositionX + dx > canvas.width - ballRadius || ballPositionX + dx < ballRadius) {
         dx = -dx;
+        if(dx > 0){
+            dx += 0.1;
+        }else{
+            dx -= 0.1;
+        }
     }
+
     if (ballPositionY + dy < ballRadius) {
         dy = -dy;
     }
-
-    else if (ballPositionY + dy > canvas.height - ballRadius - 20 ) { // ball paddle collision
+    else if (ballPositionY + dy > canvas.height - ballRadius - 20 ) { // ball-paddle collision
 
         if (ballPositionX > paddlePositionX && ballPositionX < paddlePositionX + paddleWidth) {
-            // dx = 8*((ballPositionX - (paddlePositionX + paddleWidth/2))/ paddleWidth);
+            if(dx<0){
+                dx -= 0.5*Math.abs((ballPositionX - (paddlePositionX + paddleWidth/2))/ paddleWidth);
+            }else{
+                dx += 0.5*Math.abs((ballPositionX - (paddlePositionX + paddleWidth/2))/ paddleWidth);
+            }
             dy = -dy;
         } else { // if no collision
             lives--;
@@ -198,10 +211,10 @@ function mouseMove(e) {
 }
 
 // draw();
-document.getElementById("startGame").addEventListener("click", function () {
+document.getElementById("start-game-container").addEventListener("click", function () {
 
     // setTimeout(function(){ draw(); }, 3000);
-    document.getElementsByClassName("start-game-container")[0].style.display = "none";
+    document.getElementById("start-game-container").style.display = "none";
     document.getElementById("levels-container").style.display = "none";
     draw();
 

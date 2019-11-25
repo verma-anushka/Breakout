@@ -29,8 +29,8 @@
                 <div class="level-7 levels" id="level-7"><span class="no-select">7</span></div>
             </div>
         </div>
-        <div class="start-game-container">
-            <div class="start">
+        <div id="start-game-container">
+            <div id="start">
                 <button id="startGame">start</button>
             </div>
         </div>
@@ -39,7 +39,15 @@
                 <canvas width="1100" height="600" id="canvas"></canvas>
             </div>
         </div>
-        
+        <div class="game-end-container">
+            <div id="won" class="no-show">
+                <p>Congratulations!</p>
+                <p>You Won!</p>
+            </div>
+            <div id="lost" class="no-show">
+                <p>You Lost!</p>
+            </div>
+        </div>
     </div>
 
     <script src="./js/init.js"></script>
