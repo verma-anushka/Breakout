@@ -1,4 +1,3 @@
-# Breakout
 # BREAKOUT :joystick:
 This is a basic implementation of the **Atari Breakout** game. In this game, the player moves a paddle on the screen and bounces a ball or balls. The objective is to destroy bricks in the top of the window.
 
